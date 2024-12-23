@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/studentFragment">
+    <fragment android:id="@+id/studentFragment" android:name="vn.edu.hust.studentman.StudentFragment"
+              android:label="StudentFragment">
+        <action android:id="@+id/update_student_details" app:destination="@id/updateFragment"/>
+    </fragment>
+    <fragment android:id="@+id/updateFragment" android:name="vn.edu.hust.studentman.UpdateFragment"
+              android:label="UpdateFragment">
+        <argument android:name="name"
+                  app:argType="string"
+                  app:nullable="false"
+                  android:defaultValue=""/>
+        <argument android:name="id"
+                  app:argType="string"
+                  app:nullable="false"
+                  android:defaultValue=""/>
+        <argument android:name="position"
+                  app:argType="integer"
+                  app:nullable="false"
+                  android:defaultValue="-1"/>
+        <argument android:name="state"
+                  app:argType="string"
+                  app:nullable="false"
+                  android:defaultValue="add"/>
+        <action android:id="@+id/updated" app:destination="@id/studentFragment"/>
+    </fragment>
+</navigation>
